@@ -1,0 +1,147 @@
+
+
+
+Abonents = {
+    {
+        name = "MK3_1079_N0",
+        ip = "127.0.0.1",
+        ssh_path = ":/configs/ssh_keys/MK3_1079_N0_sshkey.rsa",
+    },
+    {
+        name = "MK3_1079_N1",
+        ip = "127.0.0.1",
+        user = "davydovaa",
+    },
+    {
+        name = "MK3_1079_N2",
+        ip = "127.0.0.1",
+        port = "22",
+    },
+    {
+        name = "MK3_3021_N7",
+        ip = "127.0.0.1",
+        port = "22",
+        user = "davydovaa",
+        ssh_path = ":/configs/ssh_keys/MK3_3021_N7_sshkey.rsa",
+    },
+    {
+        name = "MK3_3021_N4",
+        ip = "127.0.0.1",
+        port = "22",
+        user = "davydovaa",
+        ssh_path = ":/configs/ssh_keys/MK3_3021_N4_sshkey.rsa",
+    },
+    {
+        name = "JB1_508_N11",
+        ip = "127.0.0.1",
+        port = "22",
+        user = "davydovaa",
+        ssh_path = ":/configs/ssh_keys/JB1_508_N11_sshkey.rsa",
+    },
+    {
+        name = "JB1_508_N13",
+        ip = "127.0.0.1",
+        port = "22",
+        user = "davydovaa",
+        ssh_path = ":/configs/ssh_keys/JB1_508_N13_sshkey.rsa",
+    },
+    {
+        name = "JB1_508_N6",
+        ip = "127.0.0.1",
+        port = "22",
+        user = "davydovaa",
+        ssh_path = ":/configs/ssh_keys/JB1_508_N6_sshkey.rsa",
+    },
+    {
+        name = "JB1_508_N5",
+        ip = "127.0.0.1",
+        port = "22",
+        user = "davydovaa",
+        ssh_path = ":/configs/ssh_keys/JB1_508_N5_sshkey.rsa",
+    },
+    {
+        name = "JB1_508_N2",
+        ip = "127.0.0.1",
+        port = "22",
+        user = "davydovaa",
+        ssh_path = ":/configs/ssh_keys/JB1_508_N2_sshkey.rsa",
+    },
+} -- Abonents
+
+
+
+Groups = {
+    All = {
+        "MK3_1079_N0", "MK3_1079_N1", "MK3_1079_N2",
+        "JB1_508_N2", "JB1_508_N5", "JB1_508_N6", "JB1_508_N11", "JB1_508_N13",
+        "MK3_3021_N4", "MK3_3021_N7",
+    },
+    MK3_1079 = {
+        "MK3_1079_N0", "MK3_1079_N1", "MK3_1079_N2",
+    },
+    JB1_508 = {
+        "JB1_508_N2", "JB1_508_N5", "JB1_508_N6", "JB1_508_N11", "JB1_508_N13",
+    },
+    MK3_3021 = {
+        "MK3_3021_N4", "MK3_3021_N7",
+    },
+    Group1 = {
+        "MK3_1079_N0", "MK3_1079_N1",
+        "MK3_3021_N7",
+    },
+    Group2 = {
+        "MK3_1079_N0",
+        "JB1_508_N6", "JB1_508_N11",
+        "MK3_3021_N7",
+    },
+}
+
+
+
+Algorithms = {
+    ALG__RANDOM_1 = {
+        name = "ALG__RANDOM_1",
+        descr = "Algorithm is for random action number 1",
+        alg_path = "./algorithms/ALG__RANDOM_1.sh",
+        exec_abns = {
+            "MK3_1079_N0", "MK3_1079_N1",
+            "JB1_508_N2", "JB1_508_N6", "JB1_508_N13",
+        },
+    },
+    ALG__PING_EVERYONE = {
+        name = "ALG__PING_EVERYONE",
+        descr = "Algorithm is for broadcast ping",
+        alg_path = "./algorithms/ALG__PING_EVERYONE.sh",
+        exec_abns = {
+            "MK3_1079_N0", "MK3_1079_N1", "MK3_1079_N2",
+            "JB1_508_N2", "JB1_508_N5", "JB1_508_N6", "JB1_508_N11", "JB1_508_N13",
+            "MK3_3021_N4", "MK3_3021_N7",
+        },
+    },
+    ALG__CONFIG_RESET__MK3_1079 = {
+        name = "ALG__CONFIG_RESET__MK3_1079",
+        descr = "Algorithm is for MK3_1079 group configuration reset",
+        alg_path = "./algorithms/ALG__CONFIG_RESET__MK3_1079.sh",
+        exec_abns = {
+            "MK3_1079_N0", "MK3_1079_N1", "MK3_1079_N2",
+        },
+    },
+    ALG__CONFIG_GET__JB1_508 = {
+        name = "ALG__CONFIG_GET__JB1_508",
+        descr = "Algorithm is for JB1_508 group configuration getting",
+        alg_path = "./algorithms/ALG__CONFIG_GET__JB1_508.sh",
+        exec_abns = {
+            "JB1_508_N2", "JB1_508_N5", "JB1_508_N6", "JB1_508_N11", "JB1_508_N13",
+        },
+    },
+    ALG__LAST_PATCH_INSTALL__MK3_3021 = {
+        name = "ALG__LAST_PATCH_INSTALL__MK3_3021",
+        descr = "Algorithm is for MK3_3021 group last patch installing",
+        alg_path = "./algorithms/ALG__LAST_PATCH_INSTALL__MK3_3021.sh",
+        exec_abns = {
+            "MK3_3021_N4", "MK3_3021_N7",
+        },
+    },
+}
+
+
